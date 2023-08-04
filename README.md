@@ -7,6 +7,7 @@
 <img width="1440" alt="Screenshot 1402-05-13 at 12 29 43" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/b003ad0d-7616-4a73-9fe3-7fb06fe3cbaa">
 
 پس از آن در پکیج test پروژه یک پکیج به نام resources می‌سازیم و آن را به عنوان test resources root انتخاب می‌کنیم:
+
 <img width="1440" alt="Screenshot 1402-05-13 at 12 33 27" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/72a1fea3-8dcf-4fb4-9f80-f1a9c0249b74">
 
 سپس فایل caculator.feature را در دایرکتوری feature می‌سازیم و سناریوی جمع آن دو عدد را به آن اضافه می‌کنیم:
@@ -69,3 +70,50 @@
 
 <img width="1440" alt="Screenshot 1402-05-13 at 13 38 02" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/a8ee3084-1630-4f1c-9e2c-1395d16b4199">
 
+## مسئله‌ی دوم
+حال مشابه مسئله‌ی قبل، عملیات‌های ضرب و تقسیم و توان را هم برای ماشین‌حساب پیاده‌سازی می‌کنیم. توجه شود که در اینجا کدهای مربوط به مسئله‌ی قبلی یعنی جمع دو عدد کامنت شده است.
+### ضرب دو عدد
+برای پیاده‌سازی جمع دو عدد ابتدا سناریو‌های تست را در فایل calculator.feature می‌نویسیم. یک سناریوی ضرب دو عدد را می‌نویسیم و سپس به دلیل آنکه در ادامه قرار است عملیات‌های دیگر هم اضافه شود، سناریوی outlineمان را به شکلی می‌نویسیم که operation را هم بگیرد. هم‌چنین examples را هم می‌نویسیم:
+
+<img width="1440" alt="Screenshot 1402-05-13 at 18 24 20" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/6cec3fff-1ad3-42d7-b633-f1153ddd28cc">
+
+حال باید step definitionها را در فایل MyStepdefs بنویسیم که به شکل زیر خواهند بود:
+
+<img width="1440" alt="Screenshot 1402-05-13 at 18 24 14" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/ccaed5e6-f4a8-4ec5-9674-6590a39e25da">
+
+همانطور که دیده می‌شود، در این فایل خطا داریم چرا که متد multiply هنوز پیاده‌سازی نشده است. اگر RunnerTest را اجرا کنیم با خطا مواجه خواهیم شد:
+
+<img width="1403" alt="Screenshot 1402-05-13 at 18 24 45" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/c021694c-9fd0-4bb2-bfb9-6a86e4678879">
+
+در این مرحله متد multiply را در کلاس Calculator پیاده‌سازی می‌کنیم:
+
+<img width="1100" alt="Screenshot 1402-05-13 at 18 25 34" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/2ac9ddd5-f4f7-44c1-91cb-c09fc8682e6c">
+
+حال اگر RunnerTest را اجرا کنیم مشاهده می‌کنیم که همه‌ی سناریوی تست‌ها با موفقیت پاس می‌شوند:
+
+<img width="1440" alt="Screenshot 1402-05-13 at 18 25 58" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/19401870-ff72-44cf-ab7c-96a4b9641b44">
+
+### تقسیم دو عدد
+برای پیاده‌سازی عملیات تقسیم در این پروژه به این شکل عمل کرده‌ایم که حاصل تقسیم دو عدد همواره برابر عددی صحیح است و در صورتی که در عدد بر یکدیگر بخش‌پذیر نباشند، کف حاصل تقسیم به عنوان نتیجه بازگردانده می‌شود.
+ابتدا در فایل calculator.feature سناریویی برای تقسیم می‌نویسیم و یک سناریو هم برای حالتی می‌نویسیم که یک عدد بر صفر تقسیم می‌شود. سناریوی outline تغییر نمی‌کند و تنها examples آپدیت می‌شود:
+
+<img width="967" alt="Screenshot 1402-05-13 at 19 46 33" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/ddb43e7e-d231-4753-8527-0350899bc748">
+
+حال step definitionها را هم تعریف می‌کنیم:
+
+<img width="944" alt="Screenshot 1402-05-13 at 19 46 46" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/d3e51c93-df06-4f56-8087-0cd873e05776">
+
+با اجرای RunnerTest با خطا مواجه می‌شویم چراکه متد divide هنوز پیاده‌سازی نشده است:
+
+<img width="1327" alt="Screenshot 1402-05-13 at 19 47 20" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/f8614de4-35c9-41c5-b4e0-569d50204c27">
+
+حال متد divide را در کلاس Calculator پیاده‌سازی می‌کنیم:
+
+<img width="935" alt="Screenshot 1402-05-13 at 19 49 43" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/2a20b9d7-82d2-4c2c-abee-80458af6059d">
+
+در این مرحله دوباره RunnerTest را اجرا می‌کنیم و مشاهده می‌کنیم که تمامی تست‌ها با موفقیت پاس می‌شوند:
+
+<img width="1360" alt="Screenshot 1402-05-13 at 19 50 25" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/cedec52b-d8f5-41ad-bfb9-30bf34f071d7">
+
+### توان
+برای پیاده‌سازی عملیات توان در این پروژه اینگونه در نظر گرفته‌‌ایم که اعداد صحیح را تنها می‌توان به توان اعداد مثبت رساند و در صورتی که توان عدد منفی باشد یا اینکه پایه و توان هر دو برابر صفر باشد exception ایجاد خواهد شد. هم‌چنین حاصل هر عددی به توان صفر برابر یک است. سناریوها به شکل زیر است و برای توان منفی یک حالت سناریوی جداگانه تعریف می‌شود:
