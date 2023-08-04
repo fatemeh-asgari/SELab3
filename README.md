@@ -116,4 +116,23 @@
 <img width="1360" alt="Screenshot 1402-05-13 at 19 50 25" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/cedec52b-d8f5-41ad-bfb9-30bf34f071d7">
 
 ### توان
-برای پیاده‌سازی عملیات توان در این پروژه اینگونه در نظر گرفته‌‌ایم که اعداد صحیح را تنها می‌توان به توان اعداد مثبت رساند و در صورتی که توان عدد منفی باشد یا اینکه پایه و توان هر دو برابر صفر باشد exception ایجاد خواهد شد. هم‌چنین حاصل هر عددی به توان صفر برابر یک است. سناریوها به شکل زیر است و برای توان منفی یک حالت سناریوی جداگانه تعریف می‌شود:
+برای پیاده‌سازی عملیات توان در این پروژه اینگونه در نظر گرفته‌‌ایم که اعداد صحیح را تنها می‌توان به توان اعداد مثبت رساند و در صورتی که توان عدد منفی باشد یا اینکه پایه و توان هر دو برابر صفر باشد exception ایجاد خواهد شد. هم‌چنین حاصل هر عدد مثبتی به توان صفر برابر یک است. سناریوها به شکل زیر است و برای توان منفی یک حالت سناریوی جداگانه تعریف می‌شود:
+
+<img width="939" alt="Screenshot 1402-05-13 at 21 51 51" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/1738515b-c153-4274-a49b-50928b7db5df">
+
+سپس step definitionها را ایجاد می‌کنیم:
+
+<img width="1440" alt="Screenshot 1402-05-13 at 18 24 14" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/6a9f5428-7a83-4d2c-8a2e-6a319feb6497">
+
+
+با اجرای RunnerTest با خطا مواجه می‌شویم چرا که متد power هنوز پیاده‌سازی نشده است:
+
+<img width="1365" alt="Screenshot 1402-05-13 at 20 26 02" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/ef91d887-c2f8-421d-9800-0c2d6c486b74">
+
+متد power را در کلاس Calculator تعریف می‌کنیم:
+
+<img width="943" alt="Screenshot 1402-05-13 at 21 52 44" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/479e9b11-1264-4d00-abdf-ef93be0fe378">
+
+حال مشاهده می‌کنیم که تمامی تست‌ها با موفقیت پاس می‌شوند:
+
+<img width="1317" alt="Screenshot 1402-05-13 at 21 53 30" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/21f77adc-8839-456c-a8c3-c378f14aaf46">
