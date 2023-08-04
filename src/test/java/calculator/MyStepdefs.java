@@ -30,6 +30,12 @@ public class MyStepdefs {
     public void iPerformTheOperation() {
         if (operation == '*') {
             result = calculator.multiply(value1, value2);
+        } else if (operation == '/') {
+            try {
+                result = calculator.divide(value1, value2);
+            } catch (ArithmeticException e) {
+                isDividedByZero = true;
+            }
         }
     }
 
@@ -37,5 +43,10 @@ public class MyStepdefs {
     public void iExpectTheResult(int arg0) {
         Assert.assertEquals(arg0, result);
 
+    }
+
+    @Then("^I expect the divide by zero exception$")
+    public void iExpectTheDivideByZeroException() {
+        Assert.assertTrue(isDividedByZero);
     }
 }

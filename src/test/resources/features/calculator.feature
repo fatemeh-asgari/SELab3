@@ -22,14 +22,27 @@ Feature: Calculator
     When I perform the operation
     Then I expect the result 12
 
+  Scenario: divide two numbers
+    Given Two input values, 6 and 2, and operation /
+    When I perform the operation
+    Then I expect the result 3
+
+  Scenario: divide by zero
+    Given Two input values, -7 and 0, and operation /
+    When I perform the operation
+    Then I expect the divide by zero exception
+
   Scenario Outline: use calculator
-    Given Two input values, <first> and <second>, and operation <third>
+    Given Two input values, <first> and <second>, and operation <opt>
     When I perform the operation
     Then I expect the result <result>
 
     Examples:
-      | first | second | third  | result |
+      | first | second | opt  | result |
       | 6     | 2      | *      | 12     |
       | -6    | 2      | *      | -12    |
       | 0     | 2      | *      | 0      |
+      | 6     | 2      | /      | 3      |
+      | -6    | 2      | /      | -3     |
+      | 6     | 12     | /      | 0      |
 
