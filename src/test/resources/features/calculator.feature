@@ -42,6 +42,10 @@ Feature: Calculator
       When I perform the operation
       Then I expect the negative power exception
 
+  Scenario: raise zero to zero power
+    Given Two input values, 0 and 0, and operation ^
+    When I perform the operation
+    Then I expect the negative power exception
 
   Scenario Outline: use calculator
     Given Two input values, <first> and <second>, and operation <opt>
