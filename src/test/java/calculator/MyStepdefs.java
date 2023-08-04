@@ -10,6 +10,7 @@ public class MyStepdefs {
     private Calculator calculator;
     private int value1;
     private int value2;
+    private char operation;
     private int result;
 
     @Before
@@ -17,20 +18,20 @@ public class MyStepdefs {
         calculator = new Calculator();
     }
 
-    @Given("^Two input values, (-?\\d+) and (-?\\d+)$")
-    public void twoInputValuesAnd(int arg0, int arg1) {
+    @Given("^Two input values, (\\d+) and (\\d+), and operation \\*$")
+    public void twoInputValuesAndAndOperation(int arg0, int arg1, char arg2) {
         value1 = arg0;
         value2 = arg1;
+        operation = arg2;
+    }
+    @When("^I perform the operation$")
+    public void iPerformTheOperation() {
+        if (operation == '*') {
+            result = calculator.multiply(value1, value2);
+        }
     }
 
-
-    @When("^I add the two values$")
-    public void iAddTheTwoValues() {
-        result = calculator.add(value1, value2);
-        System.out.print(result);
-    }
-
-    @Then("^I expect the result (\\d+)$")
+    @Then("^I expect the result (\\d+(.\\d+)?)$")
     public void iExpectTheResult(int arg0) {
         Assert.assertEquals(arg0, result);
 
