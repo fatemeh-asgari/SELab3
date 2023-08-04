@@ -13,6 +13,7 @@ public class MyStepdefs {
     private char operation;
     private int result;
     private boolean isDividedByZero;
+    private boolean isRaisedToNegativePower;
 
     @Before
     public void before() {
@@ -36,6 +37,12 @@ public class MyStepdefs {
             } catch (ArithmeticException e) {
                 isDividedByZero = true;
             }
+        } else if (operation == '^') {
+            try {
+                result = calculator.power(value1, value2);
+            } catch (IllegalArgumentException e) {
+                isRaisedToNegativePower = true;
+            }
         }
     }
 
@@ -48,5 +55,10 @@ public class MyStepdefs {
     @Then("^I expect the divide by zero exception$")
     public void iExpectTheDivideByZeroException() {
         Assert.assertTrue(isDividedByZero);
+    }
+
+    @Then("^I expect the negative power exception$")
+    public void iExpectTheNegativePowerException() {
+        Assert.assertTrue(isRaisedToNegativePower);
     }
 }

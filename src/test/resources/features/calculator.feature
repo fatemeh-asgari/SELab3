@@ -31,6 +31,17 @@ Feature: Calculator
     Given Two input values, -7 and 0, and operation /
     When I perform the operation
     Then I expect the divide by zero exception
+    
+  Scenario: raise a number to a power
+    Given Two input values, 2 and 3, and operation ^
+    When I perform the operation
+    Then I expect the result 8
+
+    Scenario: raise a number to a negative power
+      Given Two input values, 6 and -2, and operation ^
+      When I perform the operation
+      Then I expect the negative power exception
+
 
   Scenario Outline: use calculator
     Given Two input values, <first> and <second>, and operation <opt>
@@ -45,4 +56,7 @@ Feature: Calculator
       | 6     | 2      | /      | 3      |
       | -6    | 2      | /      | -3     |
       | 6     | 12     | /      | 0      |
+      | 6     | 0      | ^      | 1      |
+      | 6     | 2      | ^      | 36     |
+      | -6    | 4      | ^      | 1296   |
 
