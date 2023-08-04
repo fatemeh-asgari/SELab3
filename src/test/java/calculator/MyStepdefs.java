@@ -12,6 +12,7 @@ public class MyStepdefs {
     private int value2;
     private char operation;
     private int result;
+    private boolean isDividedByZero;
 
     @Before
     public void before() {
@@ -24,6 +25,7 @@ public class MyStepdefs {
         value2 = arg1;
         operation = arg2;
     }
+
     @When("^I perform the operation$")
     public void iPerformTheOperation() {
         if (operation == '*') {
@@ -31,7 +33,7 @@ public class MyStepdefs {
         }
     }
 
-    @Then("^I expect the result ([+-]?\\d*\\.?\\d*)$")
+    @Then("^I expect the result (-?\\d+)$")
     public void iExpectTheResult(int arg0) {
         Assert.assertEquals(arg0, result);
 
