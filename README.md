@@ -122,8 +122,7 @@
 
 سپس step definitionها را ایجاد می‌کنیم:
 
-<img width="1440" alt="Screenshot 1402-05-13 at 18 24 14" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/6a9f5428-7a83-4d2c-8a2e-6a319feb6497">
-
+<img width="999" alt="Screenshot 1402-05-13 at 20 25 16" src="https://github.com/fatemeh-asgari/SELab3/assets/59364998/613a5b27-7953-45e2-a382-951f2d2023dd">
 
 با اجرای RunnerTest با خطا مواجه می‌شویم چرا که متد power هنوز پیاده‌سازی نشده است:
 
